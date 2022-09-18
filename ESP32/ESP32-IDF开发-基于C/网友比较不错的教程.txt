@@ -1,0 +1,8 @@
+首先，官方出的教程 是 第一手 参考资料！
+https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/index.html
+
+
+该代码仓主要用于发布基于红旭开发板的ESP32教程
+https://github.com/xiaolongba/HX_DK_FOR_ESP32
+
+

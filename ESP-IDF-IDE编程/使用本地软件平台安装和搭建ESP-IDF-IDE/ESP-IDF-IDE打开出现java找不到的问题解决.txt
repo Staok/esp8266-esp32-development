@@ -1,0 +1,4 @@
+安装 的 时候 要选上 esp-idf-ide（包括里面有个 JDK包）
+
+把 D:\Espressif\tools\amazon-corretto-11-x64-windows-jdk 文件夹整体复制到 D:\Espressif\tools\espressif-ide\2.6.0 并重命名为 jre 即可，就能找到 javaw.exe了。。。
+espressif-ide.exe就能正常打开了
