@@ -9,8 +9,14 @@
 	https://leung-manwah.blog.csdn.net/article/details/126041087
 	https://blog.csdn.net/chuner0425/article/details/123466848
 
+	！！！目录路径不能有 空格 和 中文，否则编译不通过！！！	
+
 使用 shell 编译工程：
 	使用 idf.py 来编译、下载程序，idf.py 封装了 CMake 命令，也可以用 make 命令来操作，但推荐 idf.py
+	
+	打开 ESP-IDF 4.4 PowerShell
+
+	首先要 shell 中进入工程目录
 	
 	如果是首次：
 	idf.py set-target esp32s3
@@ -26,9 +32,14 @@
 	idf.py flash
 		需要首先在 menuconfig 中指定好了端口（串口）
 
-	显示编译后固件大小：idf.py size
-	清理：idf.py clean
-	全清：idf.py fullclean
+	显示编译后固件大小：
+	idf.py size
+	
+	清理：
+	idf.py clean
+	
+	全清：
+	idf.py fullclean
 
 	查看更多 idf.py 命令
 	idf.py --help
@@ -47,6 +58,7 @@
 Windows 环境下 ESP-IDF 编译比较慢如何优化？
 	CHIP: ESP32
 	请将 ESP-IDF 源码目录以及编译器目录 .espressif 添加到杀毒软件的排除项。
+	或者不用这么麻烦，直接关掉杀毒软件（360、电脑管家之类的）即可大幅提高编译速度
 
 
 

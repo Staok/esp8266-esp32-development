@@ -7,8 +7,25 @@
 
 ## ESP32
 
+音频开发：
+
+- 官网 & 文档：[ESP-Skainet 智能语音助手 | 乐鑫科技 (espressif.com.cn)](https://www.espressif.com.cn/zh-hans/solutions/audio-solutions/esp-skainet/overview)。[资源 | 乐鑫科技 (espressif.com.cn)](https://www.espressif.com.cn/zh-hans/solutions/audio-solutions/esp-skainet/resources)。
+- ESP-Skainet SDK：[esp-skainet/README_cn.md at master · espressif/esp-skainet (github.com)](https://github.com/espressif/esp-skainet/blob/master/README_cn.md)。
+- 底层：ESP AFE [乐鑫声学前端算法 | 乐鑫科技 (espressif.com.cn)](https://www.espressif.com.cn/zh-hans/solutions/audio-solutions/esp-afe)。
+
+摄像头 & 视觉检测 ESP-WHO：
+
+- 官网 & 论坛：[ESP-EYE AI 开发板 | 乐鑫科技 (espressif.com.cn)](https://www.espressif.com.cn/zh-hans/products/devkits/esp-eye/overview)。[ESP-WHO 中文讨论版 - ESP32 Forum](https://www.esp32.com/viewforum.php?f=31)。
+- 摄像头驱动：[espressif/esp32-camera (github.com)](https://github.com/espressif/esp32-camera)。
+- ESP-WHO SDK：[esp-who/README_CN.md at master · espressif/esp-who (github.com)](https://github.com/espressif/esp-who/blob/master/README_CN.md)。
+- 底层：ESP-DL 为 ESP-WHO 提供了丰富的深度学习相关接口 [espressif/esp-dl: Espressif deep-learning library for AIoT applications (github.com)](https://github.com/espressif/esp-dl)。
+- Edge Impulse 提供 神经网络 MCU 端的部署 [Espressif ESP-EYE (ESP32) - Edge Impulse Documentation](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-mcu-targets/espressif-esp32)。官方文档 [Getting Started - Edge Impulse Documentation](https://docs.edgeimpulse.com/docs/)。
+
+二次开发：
+
 - [xuhongv/StudyInEsp32: 【深度开源】wiif+bt模块esp32学习之旅（持续更新，欢迎 Star...） (github.com)](https://github.com/xuhongv/StudyInEsp32)。
 - [peng-zhihui/ESP32-PicoDK (github.com)](https://github.com/peng-zhihui/ESP32-PicoDK)。
+- [【DIY】小电视，但是触摸屏~_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1dS4y1p7am/)，[Forairaaaaa/Chappie-Core: Core board based on ESP32-S3 (github.com)](https://github.com/Forairaaaaa/Chappie-Core)。
 
 ## ESP8266
 
