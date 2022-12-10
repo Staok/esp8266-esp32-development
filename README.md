@@ -31,3 +31,4 @@
 
 - [xuhongv/StudyInEsp8266: 【深度开源】Wi-FI模块esp8266学习之旅（持续更新，欢迎 Star...） (github.com)](https://github.com/xuhongv/StudyInEsp8266)。
 - [yuxijian/DoubiBot: 魔性机械臂小机器人 (github.com)](https://github.com/yuxijian/DoubiBot)。
+- [letscontrolit/ESPEasy: Easy MultiSensor device based on ESP8266 (github.com)](https://github.com/letscontrolit/ESPEasy).

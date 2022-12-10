@@ -1,6 +1,6 @@
 使用在线安装：
 	注：这样安装是 在 本地 安装一个 IDE，用 vscode 安装的方式是下载一套 其的 esp-idf 插件，两种都可以
-	1、关闭杀毒软件，用管理员方式打开 esp-idf-tools-setup-online-2.16.exe。
+	1、关闭杀毒软件，用管理员方式打开 esp-idf-tools-setup-online-x.xx.exe。
 	2、选择路径，推荐只改 盘符而不要动其它路径名，比如 只 改 c 盘 到 d盘；然后选择安装组件，在选择 ”完全安装“ 的基础上 再勾选 esp-idf-ide（里面包含 快捷方式 和 JDK）！
 	3、确保网络良好，不要在下载的时候中断，否则 可以点 retry，或者重新打开 选择 esp-idf  解压的目录；安装。
 
@@ -8,6 +8,12 @@
 	可参考：
 	https://leung-manwah.blog.csdn.net/article/details/126041087
 	https://blog.csdn.net/chuner0425/article/details/123466848
+
+	1、使用 Espressif-IDE 建立工程
+
+	2、或 官方例子的路径 \Espressif\frameworks\esp-idf-v4.4.2\examples
+		新建工程，可直接 复制 官方例程 目录 到自己目录里面
+		然后 打开 ESP-IDF 4.4 PowerShell 进入该目录 正常 修改、编译 即可
 
 	！！！目录路径不能有 空格 和 中文，否则编译不通过！！！	
 
@@ -24,13 +30,33 @@
 		也可以直接将“目标”配置为环境变量：https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/api-guides/tools/idf-py.html#selecting-idf-target
 	idf.py menuconfig
 		进入 menuconfig 可以调整 目标 ic 的 flash 大小、串口端口号等等，还有 Wi-Fi 网络名称、密码和处理器速度等等，其它选项基本不用动。
-	
+		注意在 serial flash config 里面不要勾选 Enable Octal Flash，这选项下面的 Flash size 要手动改成 正确的，模式选择 DIO、STR Mode，速度 80MHz。
+			然后 detect flash size when flashing bootloader 勾选，让其自行检测
+		可以在 Component config 里面的 ESP32S3-Specific 设置 CPU 时钟频率（160/240MHz），还有 外部 PSRAM 的配置，默认是不开启的，需要开启，注意四线或八线要配置对，
+			然后 速率可以改为 80MHz，外面 FLASH 也设置 80MHz，加速。
+			具体选项说明：
+			https://blog.csdn.net/tianizimark/article/details/125264464 注意这里面老版本的 esp-idf，外部 PSRAM 的配置 菜单位置 按照我上一句说的位置
+
 	之后的编译程序：
 	idf.py build
+
+	下载程序
+	    参考：  https://blog.csdn.net/Marchtwentytwo/article/details/121169467
+		https://blog.csdn.net/Marchtwentytwo/article/details/121168947
+		https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/get-started/establish-serial-connection.html#esp32-s3
+
+	1、可以通过 USB 转串口 模块 连接板上 UART0，
+	2、也可以 直接 USB 连接，
+	3、连好后，设备管理里面 会显示 端口号如 COM14、COM15 等
+	4、直接执行命令 idf.py -p <PORT> flash monitor 即可，若是串口连接，则 执行命令行 再手动 板上 先按下 BOOT，再按下 RST 再松开 BOOT，再松开 RST 即可识别下载
 	
-	下载程序：
-	idf.py flash
-		需要首先在 menuconfig 中指定好了端口（串口）
+	也可以用 官方 flash 工具 flash_download_tool 来给 flash 下载 编译出的 bin 文件，但是这个比较麻烦
+
+	下载程序并打开串口：
+	idf.py -p <PORT> flash monitor
+		比如 idf.py -p COM14 flash monitor
+	
+		monitor 后串口监视，输入 ctrl + ] 退出 串口监视
 
 	显示编译后固件大小：
 	idf.py size
